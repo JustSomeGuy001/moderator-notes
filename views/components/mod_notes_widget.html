@@ -1,0 +1,61 @@
+<style>  
+
+</style>
+<div class="modnotes_widget">
+    <div class="wrap-collabsible">
+        <input id="collapsible" class="toggle" type="checkbox">
+        <label for="collapsible" class="lbl-toggle">{text key="modnotes+togglebox_dropdown_title"}</label>
+        <div class="collapsible-content">
+            <div class="content-inner">
+                <div class="modnotes_widget_form">
+                    {form name="modNotesForm" onsubmit="submit.disabled = true; return true;"}
+                    <table class="ow_table_1 ow_form ow_stdmargin modnotes_widget_table">
+                        <tr class="ow_alt1 ow_tr_first">
+                            <td class="modnotes_label">{label name='subject'}{error name='subject'}</td>
+                        </tr>
+                        <tr class="ow_alt1 ow_tr_first">
+                            <td class="ow_value">{input name='subject'}{error name='subject'}</td>
+                        </tr>
+                        <tr class="ow_alt1 ow_tr_first">
+                            <td class="modnotes_label">{label name='content'}{error name='content'}</td>
+                        </tr>
+                        <tr class="ow_alt1 ow_tr_first">
+                            <td class="ow_value">{input name='content'}{error name='content'}</td>
+                        </tr>
+                    </table>
+                    <div class="clearfix ow_submit ow_stdmargin modnotes_widget_submit">
+                        <div class="ow_right">{submit name='submit' class='ow_positive'}</div>
+                    </div>
+                    {/form}
+                </div>
+            </div>
+        </div>
+    </div>
+    {if $allNotes}
+    <div class="modnotes_existing_notes">
+        <br>
+        <h3 style="text-align:center">{text key="modnotes+display_note_overhead_summary"}</h3><br>
+        <table class="ow_table_1 ow_automargin">
+            <tr class="ow_alt1">
+                <td class="ow_label">{text key="modnotes+delete_note_title"}</td>
+                <td class="ow_label">{text key="modnotes+display_note_title_title"}</td>
+                <td class="ow_label">{text key="modnotes+display_note_title_notes"}</td>
+                <td class="ow_label">{text key="modnotes+display_note_title_addedby"}</td>
+                <td class="ow_label">{text key="modnotes+display_note_title_dateadded"}</td>
+
+            </tr>
+            {foreach from=$allNotes item=note}
+            <tr class="{cycle values='ow_alt1,ow_alt2'}">
+                <td width="1">
+                    <a href="{$deleteUrls[$note.id]}" onclick="return confirm('{text key="modnotes+confirm_delete_note"}');" style="width:16px; height:16px; display:block; margin:0 auto;background-repeat:no-repeat;background-position: 50% 50%;" class="ow_ic_delete"></a>
+                </td>
+                <td>{$note.subject}</td>
+                <td>{$note.content}</td>
+                <td>{$note.moderatorid}</td>
+                <td>{$note.timestamp}</td>
+            </tr>
+            {/foreach}
+        </table>
+    </div>
+    {/if}
+</div>
