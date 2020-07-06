@@ -1,9 +1,9 @@
 <?php
 
-//
-// Widget for recording and viewing moderator-created notes on users
-// Designed to be used on user profile page
-//
+/** 
+ * Widget for recording and viewing moderator-created notes on users
+ * 
+ */
 class MODNOTES_CMP_ModNotesWidget extends BASE_CLASS_Widget
 {
     public function __construct( BASE_CLASS_WidgetParameter $paramsObj )

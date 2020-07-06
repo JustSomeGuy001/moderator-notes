@@ -57,12 +57,13 @@ class MODNOTES_BOL_NotesDao extends OW_BaseDao
         return OW_DB_PREFIX . 'modnotes_notes';
     } 
 
-	//
-	// Find list of all moderator notes for given user
-	//
-	// IN: Int $userId
-	// OUT: Array
-	//
+    /** 
+     * Find list of all moderator notes for given user
+     * 
+     * @param integer $userId
+     * @return array
+     * 
+     */
     public function findNotesForUser( $userId ) {
         $example = new OW_Example();
         $example->andFieldEqual( 'memberid', $userId );

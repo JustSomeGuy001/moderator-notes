@@ -14,17 +14,11 @@ input[type='checkbox']#collapsible {
     text-transform: uppercase;
     text-align: center;
     padding: 1rem;
-    /**color: black;
-background: #FAE042;**/
     background: #e9eaed;
     cursor: pointer;
     border-radius: 7px;
     -webkit-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
-}
-
-.lbl-toggle:hover {
-    /**color: #7C5A0B;**/
 }
 
 .lbl-toggle::before {

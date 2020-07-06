@@ -34,14 +34,17 @@ class MODNOTES_BOL_Service
     {
         $this->notesDao = MODNOTES_BOL_NotesDao::getInstance();
     }
-	
 
-    //
-    // Adds a new note to Database
-    //
-    // IN: INT $memberId, INT $moderatorId, STR $subject, STR $content, INT $currentTimeStamp
-    // OUT: no return
-    //
+    /**
+     * Adds a new note to database
+     * 
+     * @param integer $memberId
+     * @param integer $moderatorId
+     * @param string $subject
+     * @param string $content
+     * @param integer $currentTimeStamp
+     * 
+     */
     public function addNote( $memberId, $moderatorId, $subject, $content, $timeStamp )
     {
         $notes = new MODNOTES_BOL_Notes();
@@ -54,23 +57,23 @@ class MODNOTES_BOL_Service
         $this->notesDao->save($notes);
     }
      
-    //
-    // Deletes note from database
-    //
-    // IN: INT $id
-    // OUT: No return
-    //
+    /**
+     * Deletes note from database
+     * 
+     * @param integer $id
+     * 
+     */
     public function deleteDatabaseRecord( $id )
     {
         $this->notesDao->deleteById($id);
     }
 
-    //
-    // Returns a list of all the notes for a specified user
-    //
-    // IN: INT $userId
-    // OUT: Array 
-    //
+    /**
+     * Returns a list of all the notes for a user
+     * 
+     * @param integer $userId
+     * 
+     */
     public function getNotesForUser( $userId )
     {
         return $this->notesDao->findNotesForUser( $userId );

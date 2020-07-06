@@ -3,12 +3,12 @@
 // Controller class for modnotes
 class MODNOTES_CTRL_Note extends OW_ActionController {
 
-    //
-    // Delete note from database
-    //
-    // IN: Array
-    // OUT: No out
-    //
+    /** 
+     * Delete note from database
+     * 
+     * @param array $params
+     * 
+     */
     public function delete( $params )
     {
         // Check if user is mod or admin

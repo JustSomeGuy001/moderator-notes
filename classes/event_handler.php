@@ -3,13 +3,13 @@
 class MODNOTES_CLASS_EventHandler
 {
 
-	//
-	// Removes all notes for user, when user profile is deleted
-	// Designed to take in base.user_unregister event
-	//
-	// IN: OW_Event (array of objects)
-	// OUT: No return
-	//
+	/** 
+	 * Removes all notes for user, when user profile is deleted
+	 * Designed to take in base.user_unregister event
+	 * 
+	 * @param array OW_Event
+	 * 
+	 */
 	public function modnotesRemove( OW_Event $event )
 	{
 		// Get params from OW_Event
